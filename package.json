@@ -1,10 +1,12 @@
 {
   "name": "react-native-exit-app",
-  "version": "2.0.0",
+  "version": "2.0.0.1",
   "description": "Exit,close,kill,shutdown app completely for React Native on iOS and Android.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "cleanup:tgz": "node scripts/cleanup-tgz.js",
+    "build:tgz": "yarn cleanup:tgz && yarn pack --filename \"$(node -p \"require('./package.json').name\")-$(node -p \"require('./package.json').version\").tgz\""
   },
   "repository": {
     "type": "git",
